@@ -138,7 +138,8 @@ convenient library to work with time series.
 Links
 -----
 
--  Source code and issue tracking can be found at
+- Documentation can be found at `Read The Docs <http://pandas-degreedays.readthedocs.org/>` ;
+- Source code and issue tracking can be found at
    `GitHub <https://github.com/scls19fr/pandas_degreedays>`__.
 
 

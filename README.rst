@@ -1,23 +1,37 @@
 pandas\_degreedays
 ==================
 
-Pandas Degree Days (``pandas_degreedays``) is a Python package to
+Pandas Degree Days (``pandas_degreedays``) is a `Python <https://www.python.org/>`__ package to
 calculate `degree days <http://en.wikipedia.org/wiki/Degree_day>`__.
-
-.. image:: https://travis-ci.org/scls19fr/pandas_degreedays.svg?branch=master
-    :target: https://travis-ci.org/scls19fr/pandas_degreedays
-
 
 .. image:: https://pypip.in/version/pandas_degreedays/badge.svg
     :target: https://pypi.python.org/pypi/pandas_degreedays/
     :alt: Latest Version
 
+.. image:: https://pypip.in/py_versions/pandas_degreedays/badge.svg
+    :target: https://pypi.python.org/pypi/pandas_degreedays/
+    :alt: Supported Python versions
+
+.. image:: https://pypip.in/format/pandas_degreedays/badge.svg
+    :target: https://pypi.python.org/pypi/pandas_degreedays/
+    :alt: Download format
+
+.. image:: https://pypip.in/license/pandas_degreedays/badge.svg
+    :target: https://pypi.python.org/pypi/pandas_degreedays/
+    :alt: License
+
+.. image:: https://pypip.in/status/pandas_degreedays/badge.svg
+    :target: https://pypi.python.org/pypi/<PYPI_PKG_NAME>/
+    :alt: Development Status
+
+.. image:: https://sourcegraph.com/api/repos/github.com/scls19fr/pandas_degreedays/.badges/status.png
+   :target: https://sourcegraph.com/github.com/scls19fr/pandas_degreedays
 
 .. image:: https://badges.gitter.im/Join%20Chat.svg
    :target: https://gitter.im/scls19fr/pandas_degreedays?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
-   
-.. image:: https://sourcegraph.com/api/repos/github.com/scls19fr/pandas_degreedays/.badges/status.png
-   :target: https://sourcegraph.com/github.com/scls19fr/pandas_degreedays
+
+.. image:: https://travis-ci.org/scls19fr/pandas_degreedays.svg?branch=master
+    :target: https://travis-ci.org/scls19fr/pandas_degreedays
 
 You must provide a `Pandas
 Series <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html>`__
@@ -63,14 +77,12 @@ We can calculate degree days using:
 
 
 ``method`` can be :
-
- - ``'pro'`` (energy professionals) - this is default calculation method)
+ - ``'pro'`` (energy professionals) - this is default calculation method
  - ``'meteo'``
-
-``typ`` can be :
-
- - ``'heating'``
+``typ`` (calculation type) can be :
+ - ``'heating'`` - this is default calculation type
  - ``'cooling'``
+``Tref`` is reference temperature - default value is ``18.0``
 
 It outputs a `Pandas
 DataFrame <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html>`__

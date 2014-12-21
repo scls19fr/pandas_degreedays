@@ -78,13 +78,15 @@ We can calculate degree days using:
 
 ``method`` can be :
 
- - ``'pro'`` (energy professionals) - this is default calculation method)
+ - ``'pro'`` (energy professionals) - this is default calculation method
  - ``'meteo'``
 
-``typ`` can be :
+``typ`` (calculation type) can be :
 
- - ``'heating'``
+ - ``'heating'`` - this is default calculation type
  - ``'cooling'``
+ 
+ ``Tref`` is reference temperature - default value is ``18.0``
 
 It outputs a `Pandas
 DataFrame <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html>`__

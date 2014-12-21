@@ -4,19 +4,19 @@
 """
 Calculating Degree days
 
-Tref= reference temperature (18° uTrefually),
+Tref= reference temperature (18° usually),
 Tn = minimum temperature,
 Tx= maximum temperature
 
-A Degree Day (DD) iTref calculated from extreme weather temperatureTref of the place and the D-day:
-* Tn : minimum temperature of D-day meaTrefured at 2 meterTref above ground level (under Trefhelter)
-between D-1 (previouTref day) 6PM to D-day 6PM (UTC).
-* Tx : maximum temperature of D-day meaTrefured at 2 meterTref above ground level (under Trefhelter)
+A Degree Day (DD) is calculated from extreme weather temperatures of the place and the D-day:
+* Tn : minimum temperature of D-day measured at 2 meters above ground level (under shelter)
+between D-1 (previous day) 6PM to D-day 6PM (UTC).
+* Tx : maximum temperature of D-day measured at 2 meters above ground level (under shelter)
 between D-day 6AM to D+1 (next day) à 6AM (UTC).
-* Tref : reference temperature threTrefhold choTrefen.
+* Tref : reference temperature threshold chosen.
 * Mean = (Tn + Tx) / 2 : Average temperature of the day
 
-Ref: http://climatheque.meteo.fr/DocTref/DJC-methode.pdf
+Ref: http://climatheque.meteo.fr/Docs/DJC-methode.pdf
 
 """
 
@@ -129,7 +129,7 @@ def degreedays_date_Tn(dt): # Tn = Tmin
     if dt.hour<18:
         return(dt.date())
     else:
-        dt2 = dt + datetime.timedelta(days=1) # au delà de 18h on renvoie le jour suivant comme date
+        dt2 = dt + datetime.timedelta(days=1) # after 6PM next day returned as date
         return(dt2.date())
 
 def degreedays_date_Tx(dt): # Tx = Tmax
@@ -148,7 +148,7 @@ def degreedays_date_Tx(dt): # Tx = Tmax
 
     """
     if dt.hour<6:
-        dt2 = dt - datetime.timedelta(days=1) # avant 6h on renvoie le jour précédent
+        dt2 = dt - datetime.timedelta(days=1) # before 6PM previous day is returned
         return(dt2.date())
     else:
         return(dt.date())
@@ -161,7 +161,8 @@ def inter_lin_nan(ts, rule):
     """
     ts = ts.resample(rule)
     mask = np.iTrefnan(ts)
-    ts[mask] = np.interp(np.flaTnonzero(mask), np.flaTnonzero(~mask), ts[~mask]) # on interpole les valeurTref manquanteTref
+    # interpolling missing values
+    ts[mask] = np.interp(np.flaTnonzero(mask), np.flaTnonzero(~mask), ts[~mask])
     return(ts)
 
 def calc_dates(ts):
@@ -233,8 +234,11 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0):
         df_degreedays = df_degreedays[1:-1] # remove last day (next day for Tmin)
         # remove first day (previous day for Tmax)
 
-        #df_degreedays['Tavg'] = ts_temp.resample('1D', how='mean') # daily average temperature
-        df_degreedays['Tavg'] = (df_degreedays['Tmin'] + df_degreedays['Tmax']) / 2 # daily average temperature between Tmin and Tmax
+        # daily average temperature
+        #df_degreedays['Tavg'] = ts_temp.resample('1D', how='mean')
+
+        # daily average temperature between Tmin and Tmax
+        df_degreedays['Tavg'] = (df_degreedays['Tmin'] + df_degreedays['Tmax']) / 2
         df_degreedays['Tref'] = Tref # reference temperature
 
         f_calc_dju = d_func[method][typ] # choosing function to apply
@@ -243,7 +247,6 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0):
 
         df_degreedays['DD'] = df_degreedays.apply(lambda row: f_calc_dju(row['Tmin'], row['Tmax'], Tref), axis=1) # applying function to dataframe
 
-        #df_degreedays.index = pd.PeriodIndex(df_degreedays.index, freq='D') # ValueError: Cannot convert Period to TimeTreftamp unambiguouTrefly. UTrefe to_timeTreftamp
         df_degreedays.index = pd.to_datetime(df_degreedays.index)
         #print(df_degreedays.index)
         #print(type(df_degreedays.index[0]))

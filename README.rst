@@ -16,6 +16,9 @@ calculate `degree days <http://en.wikipedia.org/wiki/Degree_day>`__.
 .. image:: https://badges.gitter.im/Join%20Chat.svg
    :target: https://gitter.im/scls19fr/pandas_degreedays?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
    
+.. image:: https://sourcegraph.com/api/repos/github.com/scls19fr/pandas_degreedays/.badges/status.png
+   :target: https://sourcegraph.com/github.com/scls19fr/pandas_degreedays
+
 You must provide a `Pandas
 Series <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html>`__
 with temperature values.

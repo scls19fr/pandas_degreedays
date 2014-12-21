@@ -15,7 +15,7 @@
     :alt: License
 
 .. image:: https://pypip.in/status/pandas_degreedays/badge.svg
-    :target: https://pypi.python.org/pypi/<PYPI_PKG_NAME>/
+    :target: https://pypi.python.org/pypi/pandas_degreedays/
     :alt: Development Status
 
 .. image:: https://sourcegraph.com/api/repos/github.com/scls19fr/pandas_degreedays/.badges/status.png

@@ -8,6 +8,6 @@ Links
 -----
 
 - Documentation can be found at 
-   `Read The Docs <http://pandas-degreedays.readthedocs.org/>` ;
+   `Read The Docs <http://pandas-degreedays.readthedocs.org/>`__ ;
 - Source code and issue tracking can be found at
    `GitHub <https://github.com/scls19fr/pandas_degreedays>`__.

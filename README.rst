@@ -1,7 +1,7 @@
 pandas\_degreedays
 ==================
 
-Pandas Degree Days (``pandas_degreedays``) is a Python package to
+Pandas Degree Days (``pandas_degreedays``) is a `Python <https://www.python.org/>`__ package to
 calculate `degree days <http://en.wikipedia.org/wiki/Degree_day>`__.
 
 .. image:: https://travis-ci.org/scls19fr/pandas_degreedays.svg?branch=master

@@ -6,18 +6,6 @@
 Welcome to pandas_degreedays's documentation!
 =============================================
 
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-
-pandas\_degreedays
-==================
-
-Pandas Degree Days (``pandas_degreedays``) is a `Python <https://www.python.org/>`__ package to
-calculate `degree days <http://en.wikipedia.org/wiki/Degree_day>`__.
-
 .. image:: https://pypip.in/version/pandas_degreedays/badge.svg
     :target: https://pypi.python.org/pypi/pandas_degreedays/
     :alt: Latest Version
@@ -46,6 +34,19 @@ calculate `degree days <http://en.wikipedia.org/wiki/Degree_day>`__.
 
 .. image:: https://travis-ci.org/scls19fr/pandas_degreedays.svg?branch=master
     :target: https://travis-ci.org/scls19fr/pandas_degreedays
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+
+pandas\_degreedays
+==================
+
+Pandas Degree Days (``pandas_degreedays``) is a `Python <https://www.python.org/>`__ package to
+calculate `degree days <http://en.wikipedia.org/wiki/Degree_day>`__.
 
 Usage
 -----

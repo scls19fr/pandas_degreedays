@@ -76,17 +76,13 @@ We can calculate degree days using:
     df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0)
 
 
-``method`` can be :
-
- - ``'pro'`` (energy professionals) - this is default calculation method
- - ``'meteo'``
-
-``typ`` (calculation type) can be :
-
- - ``'heating'`` - this is default calculation type
- - ``'cooling'``
- 
- ``Tref`` is reference temperature - default value is ``18.0``
+ - ``method`` can be :
+   - ``'pro'`` (energy professionals) - this is default calculation method
+   - ``'meteo'``
+ - ``typ`` (calculation type) can be :
+   - ``'heating'`` - this is default calculation type
+   - ``'cooling'``
+ - ``Tref`` is reference temperature - default value is ``18.0``
 
 It outputs a `Pandas
 DataFrame <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html>`__

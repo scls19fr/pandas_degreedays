@@ -77,7 +77,6 @@ with degree days like:
 .. figure:: https://github.com/scls19fr/pandas_degreedays/blob/master/sample/figure.png
    :alt: figure
 
-
 About Pandas
 ------------
 

@@ -47,6 +47,9 @@ calculate `degree days <http://en.wikipedia.org/wiki/Degree_day>`__.
 .. image:: https://travis-ci.org/scls19fr/pandas_degreedays.svg?branch=master
     :target: https://travis-ci.org/scls19fr/pandas_degreedays
 
+Usage
+-----
+
 You must provide a `Pandas
 Series <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html>`__
 with temperature values.

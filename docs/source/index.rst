@@ -23,8 +23,12 @@ Welcome to pandas_degreedays's documentation!
     :alt: License
 
 .. image:: https://pypip.in/status/pandas_degreedays/badge.svg
-    :target: https://pypi.python.org/pypi/<PYPI_PKG_NAME>/
+    :target: https://pypi.python.org/pypi/pandas_degreedays/
     :alt: Development Status
+
+.. image:: https://readthedocs.org/projects/pandas-degreedays/badge/?version=latest
+   :target: http://pandas-degreedays.readthedocs.org/en/latest/
+   :alt: Documentation Status
 
 .. image:: https://sourcegraph.com/api/repos/github.com/scls19fr/pandas_degreedays/.badges/status.png
    :target: https://sourcegraph.com/github.com/scls19fr/pandas_degreedays
@@ -34,7 +38,6 @@ Welcome to pandas_degreedays's documentation!
 
 .. image:: https://travis-ci.org/scls19fr/pandas_degreedays.svg?branch=master
     :target: https://travis-ci.org/scls19fr/pandas_degreedays
-
 
 Contents:
 

@@ -19,7 +19,7 @@
     :alt: Development Status
 
 .. image:: https://readthedocs.org/projects/pandas-degreedays/badge/?version=latest
-   :target: https://readthedocs.org/projects/pandas-degreedays/?badge=latest
+   :target: http://pandas-degreedays.readthedocs.org/en/latest/
    :alt: Documentation Status
 
 .. image:: https://sourcegraph.com/api/repos/github.com/scls19fr/pandas_degreedays/.badges/status.png

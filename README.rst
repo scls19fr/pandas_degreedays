@@ -47,7 +47,7 @@ We can calculate degree days using:
     df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0)
 
 
-`method` can be :
+``method`` can be :
 
  - ``'pro'`` (energy professionals) - this is default calculation method)
  - ``'meteo'``

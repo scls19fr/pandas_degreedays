@@ -5,7 +5,7 @@ Pandas Degree Days (`pandas_degreedays`) is a Python package to calculate
 
 You must provide a [Pandas Series](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html) with temperature values.
 
-Let's call `ts_temp` this Serie which look like:
+Let's call `ts_temp` this Serie which looks like:
 
     datetime
     2014-03-20 23:00:00    11
@@ -35,6 +35,14 @@ We can calculate degree days using:
 
     from pandas_degreedays import calculate_dd
     df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0)
+
+`method` can be:
+ * `'pro'` (energy professionals) - this is default calculation method)
+ * `'meteo'`
+
+`typ` can be:
+ * `'heating'`
+ * `'cooling'`
 
 It outputs a [Pandas DataFrame](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html) 
 with degree days like:

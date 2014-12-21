@@ -1,0 +1,4 @@
+pytest
+unittest2
+nose
+pandas

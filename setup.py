@@ -8,7 +8,8 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 def readme():
-    with open('README.rst') as f:
+    filename = os.path.join('docs', 'source', 'index.rst')
+    with open(filename) as f:
         return f.read()
 
 setup(

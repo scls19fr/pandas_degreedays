@@ -7,10 +7,15 @@ calculate `degree days <http://en.wikipedia.org/wiki/Degree_day>`__.
 .. image:: https://travis-ci.org/scls19fr/pandas_degreedays.svg?branch=master
     :target: https://travis-ci.org/scls19fr/pandas_degreedays
 
+
 .. image:: https://pypip.in/version/pandas_degreedays/badge.svg
     :target: https://pypi.python.org/pypi/pandas_degreedays/
     :alt: Latest Version
 
+
+.. image:: https://badges.gitter.im/Join%20Chat.svg
+   :target: https://gitter.im/scls19fr/pandas_degreedays?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+   
 You must provide a `Pandas
 Series <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html>`__
 with temperature values.

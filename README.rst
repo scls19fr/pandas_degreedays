@@ -46,10 +46,16 @@ We can calculate degree days using:
     from pandas_degreedays import calculate_dd
     df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0)
 
-``method`` can be: \* ``'pro'`` (energy professionals) - this is default
-calculation method) \* ``'meteo'``
 
-``typ`` can be: \* ``'heating'`` \* ``'cooling'``
+`method` can be :
+
+ - ``'pro'`` (energy professionals) - this is default calculation method)
+ - ``'meteo'``
+
+``typ`` can be :
+
+ - ``'heating'``
+ - ``'cooling'``
 
 It outputs a `Pandas
 DataFrame <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html>`__
@@ -80,7 +86,7 @@ with degree days like:
 About Pandas
 ------------
 
-`**pandas** <http://pandas.pydata.org/>`__ is a Python package providing
+`pandas <http://pandas.pydata.org/>`__ is a Python package providing
 fast, flexible, and expressive data structures designed to make working
 with "relational" or "labeled" data both easy and intuitive. It's a very
 convenient library to work with time series.

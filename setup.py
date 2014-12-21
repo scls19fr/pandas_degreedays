@@ -7,6 +7,10 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
+def readme():
+    with open('README.rst') as f:
+        return f.read()
+
 setup(
     name='pandas_degreedays',
 
@@ -16,8 +20,7 @@ setup(
     version='0.0.1',
 
     description='Pandas degree days',
-    setup_requires=['setuptools-markdown'],
-    long_description_markdown_filename='README.md',
+    long_description=readme(),
 
     # The project's main homepage.
     url='https://github.com/scls19fr/pandas_degreedays',

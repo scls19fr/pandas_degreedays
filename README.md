@@ -1,6 +1,6 @@
 #pandas_degreedays
 
-Pandas Degree Days (pandas_degreedays) is a Python package to calculate
+Pandas Degree Days (`pandas_degreedays`) is a Python package to calculate
 [degree days](http://en.wikipedia.org/wiki/Degree_day).
 
 You must provide a [Pandas Series](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html) with temperature values.
@@ -56,6 +56,7 @@ with degree days like:
 
     [224 rows x 6 columns]
 
+![figure](https://github.com/scls19fr/pandas_degreedays/blob/master/sample/figure.png)
 
 ## About Pandas
 [**pandas**](http://pandas.pydata.org/) is a Python package providing fast, flexible, and expressive data

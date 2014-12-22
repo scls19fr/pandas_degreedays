@@ -18,6 +18,10 @@
     :target: https://pypi.python.org/pypi/pandas_degreedays/
     :alt: Development Status
 
+.. image:: https://readthedocs.org/projects/pandas-degreedays/badge/?version=latest
+   :target: http://pandas-degreedays.readthedocs.org/en/latest/
+   :alt: Documentation Status
+
 .. image:: https://sourcegraph.com/api/repos/github.com/scls19fr/pandas_degreedays/.badges/status.png
    :target: https://sourcegraph.com/github.com/scls19fr/pandas_degreedays
 

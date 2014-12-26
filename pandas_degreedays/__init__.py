@@ -298,6 +298,12 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'
         raise(NotImplementedError("Methode %s non disponible" % method))
 
 def plot_temp(ts_temp, df_degreedays):
+    """
+    plot temperature (time serie), temperature (min/max)
+    degree days and cumulated degree days
+    ts_temp is an hourly time serie
+    df_degreedays is a daily dataframe
+    """
     fig, axes = plt.subplots(nrows=4, ncols=1)
     ts_temp.resample('1H').plot(ax=axes[0])
     df_degreedays[['Tmin', 'Tavg', 'Tmax', 'Tref']].plot(ax=axes[1], legend=False)
@@ -306,7 +312,7 @@ def plot_temp(ts_temp, df_degreedays):
     df_degreedays['DD_cum'].plot(ax=axes[3])
 
 if __name__ == "__main__":
-    # To run doctest (unit tests insid docstrings)
+    # To run doctest (unit tests inside docstrings)
     # run python filename.py -v
     import doctest
     doctest.testmod()

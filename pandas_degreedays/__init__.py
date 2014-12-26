@@ -195,7 +195,7 @@ def calc_dates_6hours(ts):
     df_temp["D_MIN"] = df_temp.index.map(degreedays_date_Tn) # calculating date for Tmin
     return(df_temp)
 
-def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0):
+def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'):
     """
     Calculating degree days from time series with temperature values: ts_temp
     method: 'meteo' or 'pro'
@@ -261,11 +261,25 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0):
         df_degreedays['DD'] = df_degreedays.apply(lambda row: f_calc_dju(row['Tmin'], row['Tmax'], Tref), axis=1) # applying function to dataframe
 
         df_degreedays.index = pd.to_datetime(df_degreedays.index)
+        df_degreedays.index.name = 'date'
         #print(df_degreedays.index)
         #print(type(df_degreedays.index[0]))
         df_degreedays = df_degreedays.resample('1D')
 
-        df_degreedays['DD_cum'] = df_degreedays['DD'].cumsum() # cumul des DJU
+        df_degreedays['year'] = df_degreedays.index.map(lambda x: x.year)
+        df_degreedays['year_month'] = df_degreedays.index.map(lambda x: (x.year, x.month)) # (year, month)
+        df_degreedays['year_week'] = df_degreedays.index.map(lambda x: x.isocalendar()[0:2]) # (year, week_number)
+        
+        d_groups = {
+            'yearly': 'year',
+            'monthly': 'year_month',
+            'weekly': 'year_week',
+        }
+        try:
+            group_col = d_groups[group]
+            df_degreedays['DD_cum'] = df_degreedays.groupby(group_col)['DD'].cumsum()
+        except:
+            df_degreedays['DD_cum'] = df_degreedays['DD'].cumsum()
 
         return(df_degreedays)
 

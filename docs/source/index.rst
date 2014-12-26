@@ -94,7 +94,7 @@ We can calculate degree days using:
 ::
 
     from pandas_degreedays import calculate_dd
-    df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0)
+    df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly')
 
 
 ``method`` can be :

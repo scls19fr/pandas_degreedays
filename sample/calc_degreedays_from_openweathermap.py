@@ -10,6 +10,7 @@ import click
 
 from pandas_degreedays import calculate_dd, inter_lin_nan, plot_temp
 from openweathermap_requests import OpenWeatherMapRequests, ENV_VAR_API_KEY
+#from openweathermap_requests.provider import TemperatureProvider
 import datetime
 import os
 import logging
@@ -57,6 +58,9 @@ def main(api_key, lon, lat, range, column):
             raise(NotImplementedError)
         start_date = range[0]
         end_date = range[1]
+
+    #temp_provider = TemperatureProvider('OpenWeatherMap', api_key=api_key)
+    #ts_temp = temp_provider.get_from_coordinates(lon, lat, start_date, end_date, column)
 
     ts_temp = temp_from_openweathermap(api_key, lon, lat, start_date, end_date, column)
 

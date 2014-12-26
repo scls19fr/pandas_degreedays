@@ -3,7 +3,7 @@
 
 #from pandas_degreedays.provider.openweathermap import TemperatureProviderOpenWeatherMap
 
-from openweathermap_requests import OpenWeatherMapRequests, ENV_VAR_API_KEY
+from openweathermap_requests import OpenWeatherMapRequests
 
 class TemperatureProviderFactory(object):
     """

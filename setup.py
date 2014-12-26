@@ -5,15 +5,8 @@ from setuptools import setup, find_packages  # Always prefer setuptools over dis
 from codecs import open  # To use a consistent encoding
 from os import path
 
-__author__ = "Sébastien Celles"
-__copyright__ = "Copyright 2014, celles.net"
-__credits__ = ["Sébastien Celles"]
-__license__ = "BSD"
-__version__ = "0.0.2"
-__maintainer__ = "Sébastien Celles"
-__email__ = "s.celles@gmail.com"
-__status__ = "Development"
-__url__ = 'https://github.com/scls19fr/pandas_degreedays'
+from pandas_degreedays.version import __author__, __copyright__, __credits__, \
+    __license__, __version__, __maintainer__, __email__, __status__, __url__
 
 here = path.abspath(path.dirname(__file__))
 

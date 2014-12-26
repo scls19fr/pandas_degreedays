@@ -4,3 +4,4 @@ pandas
 xlrd
 matplotlib
 click
+openweathermap-requests

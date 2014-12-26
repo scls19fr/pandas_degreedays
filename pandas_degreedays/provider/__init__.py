@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#from pandas_degreedays.provider.openweathermap import TemperatureProviderOpenWeatherMap
-
 from pandas_degreedays.provider.openweathermap import TemperatureProviderOpenWeatherMap
-#from openweathermap_requests import OpenWeatherMapRequests
 import logging
 
 class TemperatureProviderFactory(object):
@@ -24,11 +21,18 @@ class TemperatureProviderFactory(object):
 
         # === OpenWeatherMap ===
         self.add('OpenWeatherMap', TemperatureProviderOpenWeatherMap)
+        self.add('owm', TemperatureProviderOpenWeatherMap)
 
     def add(self, name, cls):
+        """
+        Adds (register) a TemperatureProvider class using a name
+        """
         self._d_factory[name.lower()] = cls
 
     def factory(self, name, *args, **kwargs):
+        """
+        Returns a TemperatureProvider (factory) using a name and arguments
+        """
         try:
             return(self._d_factory[name.lower()](*args, **kwargs))
         except:
@@ -38,4 +42,19 @@ class TemperatureProviderFactory(object):
 TEMPERATURE_PROVIDER_FACTORY = TemperatureProviderFactory()
 
 def TemperatureProvider(name, *args, **kwargs):
+    """
+    Creates a TemperatureProvider to fetch temperature from a number of online sources.
+
+    Currently supports 
+        * [OpenWeatherMap.org](http://www.openweathermap.org/) using 
+
+    Parameters
+    ----------
+
+    :param name: data source
+    :type name: str
+
+        * "OpenWeatherMap" (can also be simply "owm")
+    """
+
     return(TEMPERATURE_PROVIDER_FACTORY.factory(name, *args, **kwargs))

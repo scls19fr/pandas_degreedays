@@ -34,19 +34,13 @@ def temp_from_openweathermap(api_key, lon, lat, start_date, end_date, column):
     return(ts_temp)
 
 @click.command()
+@click.option('--provider', default='OpenWeatherMap', help=u"Temperature data provider")
 @click.option('--api_key', default='', help=u"API Key for Wunderground")
 @click.option('--lon', default=0.34189, help=u"Longitude")
 @click.option('--lat', default=46.5798114, help=u"Latitude")
 @click.option('--range', default='', help=u"Date range (YYYYMMDD:YYYYMMDD) or date (YYYYMMDD) or '' (current weather)")
 @click.option('--column', default='main.temp.ma', help=u"Temperature column")
 def main(api_key, lon, lat, range, column):
-    #if api_key=='':
-    #    try:
-    #        api_key = os.environ[ENV_VAR_API_KEY]
-    #    except:
-    #        logging.warning("You should get an API key from OpenWeatherMap.org and pass it us using either --api_key or using environment variable %r" % ENV_VAR_API_KEY)
-    #        api_key = None
-
     if range=='':
         dt = datetime.datetime.utcnow()
         #dt = datetime.datetime.fromordinal(dt.toordinal())
@@ -62,7 +56,7 @@ def main(api_key, lon, lat, range, column):
         start_date = range[0]
         end_date = range[1]
 
-    temp_provider = TemperatureProvider('OpenWeatherMap', api_key=api_key)
+    temp_provider = TemperatureProvider(provider, api_key=api_key)
     ts_temp = temp_provider.get_from_coordinates(lon, lat, start_date, end_date, column)
 
     #ts_temp = temp_from_openweathermap(api_key, lon, lat, start_date, end_date, column)

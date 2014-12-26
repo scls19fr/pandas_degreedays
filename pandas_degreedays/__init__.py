@@ -160,12 +160,27 @@ def inter_lin_nan(ts, rule):
     of time series ts
     """
     ts = ts.resample(rule)
-    mask = np.iTrefnan(ts)
+    mask = np.isnan(ts)
     # interpolling missing values
-    ts[mask] = np.interp(np.flaTnonzero(mask), np.flaTnonzero(~mask), ts[~mask])
+    ts[mask] = np.interp(np.flatnonzero(mask), np.flatnonzero(~mask), ts[~mask])
     return(ts)
 
-def calc_dates(ts):
+def calc_dates_currentday(ts):
+    """
+    Calculating dates from current day
+
+    Returns a dataframe with datetime as index
+    a column with temperature values
+    two columns for dates to calculate degree days
+        D_MAX for maximum temperature = current day
+        D_MIN for minimum temperature = current day
+    """
+    df_temp = pd.DataFrame(data=ts, index=ts.index)
+    df_temp["D_MAX"] = df_temp.index.map(degreedays_date) # calculating date
+    df_temp["D_MIN"] = df_temp.index.map(degreedays_date) # calculating date
+    return(df_temp)
+
+def calc_dates_6hours(ts):
     """
     Calculating dates for the determination of Tmax and Tmin
 
@@ -176,8 +191,6 @@ def calc_dates(ts):
         D_MIN for minimum temperature
     """
     df_temp = pd.DataFrame(data=ts, index=ts.index)
-    #df_temp["D_MAX"] = df_temp.index.map(degreedays_date) # calculating date
-    #df_temp["D_MIN"] = df_temp.index.map(degreedays_date) # calculating date
     df_temp["D_MAX"] = df_temp.index.map(degreedays_date_Tx) # calculating date for Tmax
     df_temp["D_MIN"] = df_temp.index.map(degreedays_date_Tn) # calculating date for Tmin
     return(df_temp)
@@ -215,7 +228,7 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0):
     }
 
     if method in lst_allowed_degreedays_method:
-        df_temp = calc_dates(ts_temp)
+        df_temp = calc_dates_6hours(ts_temp)
 
         ts_temp_min = df_temp.groupby('D_MIN')[ts_temp.name].min()
         ts_temp_min.name = "Tmin"

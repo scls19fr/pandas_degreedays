@@ -12,6 +12,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from pandas_degreedays import calculate_dd
+from pandas_degreedays import inter_lin_nan
 
 def main():
     basepath = os.path.dirname(__file__)
@@ -20,6 +21,8 @@ def main():
     df_temp = df_temp.set_index('datetime')
 
     ts_temp = df_temp['temp']
+
+    ts_temp = inter_lin_nan(ts_temp, '1H')
 
     print(ts_temp)
     #print(ts_temp.dtypes)

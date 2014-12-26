@@ -5,9 +5,6 @@ from setuptools import setup, find_packages  # Always prefer setuptools over dis
 from codecs import open  # To use a consistent encoding
 from os import path
 
-#from pandas_degreedays import __author__, __copyright__, __credits__, \
-#    __license__, __version__, __maintainer__, __email__, __status__, __url__
-
 __author__ = "Sébastien Celles"
 __copyright__ = "Copyright 2014, celles.net"
 __credits__ = ["Sébastien Celles"]

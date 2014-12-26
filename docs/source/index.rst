@@ -91,7 +91,7 @@ it using:
 
 
 You can also fetch a time serie with temperature from `OpenWeatherMap.org <http://www.openweathermap.org/>`__.
-You need to install first `openweathermap_requests <http://openweathermap-requests.readthedocs.org/>`__
+You need to install first `openweathermap_requests <http://openweathermap-requests.readthedocs.org/>`__.
 
 ::
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from pandas_degreedays.provider.openweathermap import TemperatureProviderOpenWeatherMap
 import logging
+import traceback
 
 class TemperatureProviderFactory(object):
     """
@@ -20,8 +20,12 @@ class TemperatureProviderFactory(object):
         self._d_factory = {}
 
         # === OpenWeatherMap ===
-        self.add('OpenWeatherMap', TemperatureProviderOpenWeatherMap)
-        self.add('owm', TemperatureProviderOpenWeatherMap)
+        try:
+            from pandas_degreedays.provider.openweathermap import TemperatureProviderOpenWeatherMap
+            self.add('OpenWeatherMap', TemperatureProviderOpenWeatherMap)
+            self.add('owm', TemperatureProviderOpenWeatherMap)
+        except:
+            logging.error(traceback.format_exc())
 
     def add(self, name, cls):
         """

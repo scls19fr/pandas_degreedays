@@ -20,6 +20,11 @@ Ref: http://climatheque.meteo.fr/Docs/DJC-methode.pdf
 
 """
 
+import datetime
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
 __author__ = "Sébastien Celles"
 __copyright__ = "Copyright 2014, celles.net"
 __credits__ = ["Sébastien Celles"]
@@ -28,12 +33,7 @@ __version__ = "0.0.2"
 __maintainer__ = "Sébastien Celles"
 __email__ = "s.celles@gmail.com"
 __status__ = "Development"
-__url__ = ''
-
-import datetime
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+__url__ = 'https://github.com/scls19fr/pandas_degreedays'
 
 # Meteo
 def hdd_meteo(Tn, Tx, Tref=18):

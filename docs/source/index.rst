@@ -101,6 +101,25 @@ You need to install first `openweathermap_requests <http://openweathermap-reques
     from pandas_degreedays.provider import TemperatureProvider
     ts_temp = TemperatureProvider('OpenWeatherMap', api_key='').get_from_coordinates(0.34189, 46.5798114, '20120601', '20141215')
 
+We can see if some data are missing using:
+
+::
+
+    idx = ts_temp.index
+    s_idx = pd.Series(idx, index=idx)
+    diff_idx = s_idx-s_idx.shift(1)
+    s_sampling_period = diff_idx.value_counts()
+    sampling_period = s_sampling_period.index[0] # most prevalent sampling period
+    not_sampling_period = (diff_idx != sampling_period) # True / False
+
+We can interpolate linearly missing data
+
+::
+
+    from pandas_degreedays import inter_lin_nan 
+    ts_temp = inter_lin_nan(ts_temp, '1H') # interpolates linearly NaN
+
+
 We can calculate degree days using:
 
 ::

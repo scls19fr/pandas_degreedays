@@ -5,7 +5,7 @@ from setuptools import setup, find_packages  # Always prefer setuptools over dis
 from codecs import open  # To use a consistent encoding
 from os import path
 
-from pandas_degreedays import __version__
+import pandas_degreedays
 
 here = path.abspath(path.dirname(__file__))
 
@@ -22,7 +22,7 @@ setup(
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/development.html#single-sourcing-the-version
     #version='0.0.2',
-    version=__version__,
+    version=pandas_degreedays.__version__,
 
     description='Pandas degree days',
     long_description=readme(),

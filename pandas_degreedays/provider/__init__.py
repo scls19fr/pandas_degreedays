@@ -4,6 +4,7 @@
 #from pandas_degreedays.provider.openweathermap import TemperatureProviderOpenWeatherMap
 
 from openweathermap_requests import OpenWeatherMapRequests
+import logging
 
 class TemperatureProviderFactory(object):
     """
@@ -46,7 +47,7 @@ class TemperatureProviderOpenWeatherMap(TemperatureProviderBase):
 
     def get_from_coordinates(self, lon, lat, start_date, end_date, column='main.temp.ma'):
         cache_name = 'cache-openweathermap'
-        ow = OpenWeatherMapRequests(api_key=api_key, cache_name=cache_name, expire_after=None) # no expiration for history
+        ow = OpenWeatherMapRequests(api_key=self.api_key, cache_name=cache_name, expire_after=None) # no expiration for history
 
         stations = ow.find_stations_near(lon=lon, lat=lat, cnt=1)
         logging.info("\n%s" % stations)

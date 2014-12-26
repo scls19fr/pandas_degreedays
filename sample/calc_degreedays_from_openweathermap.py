@@ -40,19 +40,20 @@ def temp_from_openweathermap(api_key, lon, lat, start_date, end_date, column):
 @click.option('--range', default='', help=u"Date range (YYYYMMDD:YYYYMMDD) or date (YYYYMMDD) or '' (current weather)")
 @click.option('--column', default='main.temp.ma', help=u"Temperature column")
 def main(api_key, lon, lat, range, column):
-    if api_key=='':
-        try:
-            api_key = os.environ[ENV_VAR_API_KEY]
-        except:
-            logging.warning("You should get an API key from OpenWeatherMap.org and pass it us using either --api_key or using environment variable %r" % ENV_VAR_API_KEY)
-            api_key = None
+    #if api_key=='':
+    #    try:
+    #        api_key = os.environ[ENV_VAR_API_KEY]
+    #    except:
+    #        logging.warning("You should get an API key from OpenWeatherMap.org and pass it us using either --api_key or using environment variable %r" % ENV_VAR_API_KEY)
+    #        api_key = None
 
     if range=='':
         dt = datetime.datetime.utcnow()
-        dt = datetime.datetime.fromordinal(dt.toordinal())
+        #dt = datetime.datetime.fromordinal(dt.toordinal())
+        dt = datetime.datetime(year=dt.year, month=dt.month, day=dt.day) # yesterday 00:00
         dt = dt - datetime.timedelta(days=1)
-        end_date = dt # yesterday 00:00
-        start_date = end_date - datetime.timedelta(days=365*2.5)
+        end_date = dt
+        start_date = end_date - datetime.timedelta(days=int(365*2.5))
     else:
         range = range.split(':')
         range = map(pd.to_datetime, range)

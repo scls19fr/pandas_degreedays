@@ -133,7 +133,7 @@ with degree days like:
 
     [224 rows x 6 columns]
 
-.. figure:: figure.png
+.. figure:: figure_yearly.png
    :alt: figure
 
 About Pandas

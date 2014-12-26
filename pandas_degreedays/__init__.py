@@ -25,6 +25,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+__version__ = '0.0.2'
+
 # Meteo
 def hdd_meteo(Tn, Tx, Tref=18):
     """

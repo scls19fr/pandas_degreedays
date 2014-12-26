@@ -7,7 +7,7 @@ Calculating degree days
 Plotting
 """
 
-from pandas_degreedays import calculate_dd
-from pandas_degreedays import inter_lin_nan
+from pandas_degreedays import calculate_dd, inter_lin_nan, plot_temp
+import openweathermap_requests
 
 raise(NotImplementedError)

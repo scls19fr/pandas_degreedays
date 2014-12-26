@@ -136,7 +136,7 @@ We can calculate degree days using:
  - ``'cooling'``
 ``Tref`` is reference temperature - default value is ``18.0``
 ``group``can be :
- - ``yearly``
+ - ``yearly`` - this is default grouping option
  - ``monthly``
  - ``weekly``
  - ``None``

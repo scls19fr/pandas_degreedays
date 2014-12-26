@@ -95,9 +95,11 @@ You need to install first `openweathermap_requests <http://openweathermap-reques
 
 ::
 
+    import logging
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
     from pandas_degreedays.provider import TemperatureProvider
     ts_temp = TemperatureProvider('OpenWeatherMap', api_key='').get_from_coordinates(0.34189, 46.5798114, '20120601', '20141215')
-
 
 We can calculate degree days using:
 

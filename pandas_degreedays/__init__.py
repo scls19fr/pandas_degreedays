@@ -25,6 +25,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+from pandas_degreeday.version import __version__
+
 # Meteo
 def hdd_meteo(Tn, Tx, Tref=18):
     """

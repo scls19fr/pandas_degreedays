@@ -89,6 +89,16 @@ it using:
     df_temp = df_temp.set_index('datetime')
     ts_temp = df_temp['temp']
 
+
+You can also fetch a time serie with temperature from `OpenWeatherMap.org <http://www.openweathermap.org/>`__.
+You need to install first `openweathermap_requests <http://openweathermap-requests.readthedocs.org/>`__
+
+::
+
+    from pandas_degreedays.provider import TemperatureProvider
+    ts_temp = TemperatureProvider('OpenWeatherMap', api_key='').get_from_coordinates(0.34189, 46.5798114, '20120601', '20141215')
+
+
 We can calculate degree days using:
 
 ::

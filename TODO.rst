@@ -28,13 +28,21 @@ Read Excel file
 
 ::
 
-    df = pd.read_excel("openweathermap_0.34189_46.5798114_20120101_20141215.xls", skiprows=[1])
-    df = df.set_index('dt')
-    idx = df.index
-    s_idx = pd.Series(idx)
-    diff_idx = (s_idx-s_idx.shift(1))[1:]
-    s_sampling_period = diff_idx.value_counts()
-    sampling_period = s_sampling_period[0] # most prevalent sampling period
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
 
-    see also data_quality.py
+    df = pd.read_excel("openweathermap_0.34189_46.5798114_20120101_20141215.xls", skiprows=[1])
+    #df = df.set_index('dt')
+    idx = df.index
+    s_idx = pd.Series(idx, index=idx)
+    diff_idx = s_idx-s_idx.shift(1)
+    #diff_idx = (s_idx-s_idx.shift(1))[1:]
+    s_sampling_period = diff_idx.value_counts()
+    sampling_period = s_sampling_period.index[0] # most prevalent sampling period
+    not_sampling_period = (diff_idx != sampling_period) # True / False
+    not_sampling_period = df.align(not_sampling_period, axis=0)[1].fillna(True)
+    df['diff_dt'] = diff_idx.fillna(pd.Timedelta(0))
+
+see also data_quality.py
 

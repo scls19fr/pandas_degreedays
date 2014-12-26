@@ -5,7 +5,8 @@ from setuptools import setup, find_packages  # Always prefer setuptools over dis
 from codecs import open  # To use a consistent encoding
 from os import path
 
-import pandas_degreedays
+from pandas_degreedays import __author__, __copyright__, __credits__, \
+    __license__, __version__, __maintainer__, __email__, __status__, __url__
 
 here = path.abspath(path.dirname(__file__))
 
@@ -22,20 +23,20 @@ setup(
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/development.html#single-sourcing-the-version
     #version='0.0.2',
-    version=pandas_degreedays.__version__,
+    version=__version__,
 
     description='Pandas degree days',
     long_description=readme(),
 
     # The project's main homepage.
-    url='https://github.com/scls19fr/pandas_degreedays',
+    url=__url__,
 
     # Author details
-    author='Sebastien Celles',
-    author_email='s.celles@gmail.com',
+    author=__author__,
+    author_email=__email__,
 
     # Choose your license
-    license='BSD',
+    license=__license__,
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[

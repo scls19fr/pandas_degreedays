@@ -28,7 +28,7 @@ Read Excel file
 
 ::
 
-    df = pd.read_excel("openweathermap_0.34189_46.5798114_20120101_20141215.xls", skiprows=1)
+    df = pd.read_excel("openweathermap_0.34189_46.5798114_20120101_20141215.xls", skiprows=[1])
     df = df.set_index('dt')
     idx = df.index
     s_idx = pd.Series(idx)

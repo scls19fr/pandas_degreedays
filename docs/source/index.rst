@@ -112,7 +112,7 @@ We can see if some data are missing using:
     sampling_period = s_sampling_period.index[0] # most prevalent sampling period
     not_sampling_period = (diff_idx != sampling_period) # True / False
 
-We can interpolate linearly missing data
+We can interpolate linearly missing data using:
 
 ::
 

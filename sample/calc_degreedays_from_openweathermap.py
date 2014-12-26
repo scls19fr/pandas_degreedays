@@ -6,13 +6,19 @@ Fetch temperature from OpenWeatherMap.org API
 Calculating degree days
 Plotting
 """
+import click
 
 from pandas_degreedays import calculate_dd, inter_lin_nan, plot_temp
-from openweathermap_requests import OpenWeatherMapRequests
-import click
+from openweathermap_requests import OpenWeatherMapRequests, ENV_VAR_API_KEY
 import datetime
+import os
+import logging
+import logging.config
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
-def temp_from_openweathermap(api_key, lon, lat, range, column):
+def temp_from_openweathermap(api_key, lon, lat, start_date, end_date, column):
     cache_name = 'cache-openweathermap'
     ow = OpenWeatherMapRequests(api_key=api_key, cache_name=cache_name, expire_after=None) # no expiration for history
 
@@ -27,15 +33,23 @@ def temp_from_openweathermap(api_key, lon, lat, range, column):
 
     return(ts_temp)
 
+@click.command()
 @click.option('--api_key', default='', help=u"API Key for Wunderground")
 @click.option('--lon', default=0.34189, help=u"Longitude")
 @click.option('--lat', default=46.5798114, help=u"Latitude")
 @click.option('--range', default='', help=u"Date range (YYYYMMDD:YYYYMMDD) or date (YYYYMMDD) or '' (current weather)")
 @click.option('--column', default='main.temp.ma', help=u"Temperature column")
 def main(api_key, lon, lat, range, column):
+    if api_key=='':
+        try:
+            api_key = os.environ[ENV_VAR_API_KEY]
+        except:
+            logging.warning("You should get an API key from OpenWeatherMap.org and pass it us using either --api_key or using environment variable %r" % ENV_VAR_API_KEY)
+            api_key = None
+
     if range=='':
         end_date = datetime.datetime.utcnow()
-        start_date = end_date - datetime.timedelta(days=365*2)
+        start_date = end_date - datetime.timedelta(days=365*2.5)
     else:
         range = range.split(':')
         range = map(pd.to_datetime, range)
@@ -44,7 +58,7 @@ def main(api_key, lon, lat, range, column):
         start_date = range[0]
         end_date = range[1]
 
-    ts_temp = temp_from_openweathermap(api_key, lon, lat, range, column)
+    ts_temp = temp_from_openweathermap(api_key, lon, lat, start_date, end_date, column)
 
     ts_temp = inter_lin_nan(ts_temp, '1H') # interpolates linearly NaN
 

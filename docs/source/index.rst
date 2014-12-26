@@ -164,6 +164,14 @@ with degree days like:
 
     [224 rows x 6 columns]
 
+You can display plot using:
+
+::
+
+    from pandas_degreedays import plot_temp
+    plot_temp(ts_temp, df_degreedays)
+
+
 .. figure:: figure_yearly.png
    :alt: figure
 

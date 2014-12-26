@@ -40,7 +40,7 @@ def temp_from_openweathermap(api_key, lon, lat, start_date, end_date, column):
 @click.option('--lat', default=46.5798114, help=u"Latitude")
 @click.option('--range', default='', help=u"Date range (YYYYMMDD:YYYYMMDD) or date (YYYYMMDD) or '' (current weather)")
 @click.option('--column', default='main.temp.ma', help=u"Temperature column")
-def main(api_key, lon, lat, range, column):
+def main(provider, api_key, lon, lat, range, column):
     if range=='':
         dt = datetime.datetime.utcnow()
         #dt = datetime.datetime.fromordinal(dt.toordinal())

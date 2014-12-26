@@ -23,6 +23,7 @@ Ref: http://climatheque.meteo.fr/Docs/DJC-methode.pdf
 import datetime
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Meteo
 def hdd_meteo(Tn, Tx, Tref=18):
@@ -285,6 +286,14 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'
 
     else:
         raise(NotImplementedError("Methode %s non disponible" % method))
+
+def plot_temp(ts_temp, df_degreedays):
+    fig, axes = plt.subplots(nrows=4, ncols=1)
+    ts_temp.resample('1H').plot(ax=axes[0])
+    df_degreedays[['Tmin', 'Tavg', 'Tmax', 'Tref']].plot(ax=axes[1], legend=False)
+    df_degreedays['DD'].plot(ax=axes[2])
+    #df_degreedays[['DJU', 'DJU_7']].plot(ax=axes[2])
+    df_degreedays['DD_cum'].plot(ax=axes[3])
 
 if __name__ == "__main__":
     # To run doctest (unit tests insid docstrings)

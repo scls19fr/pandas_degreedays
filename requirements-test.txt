@@ -2,3 +2,4 @@ pytest
 nose
 pandas
 xlrd
+matplotlib

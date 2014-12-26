@@ -104,6 +104,11 @@ We can calculate degree days using:
  - ``'heating'`` - this is default calculation type
  - ``'cooling'``
 ``Tref`` is reference temperature - default value is ``18.0``
+``group``can be :
+ - ``yearly``
+ - ``monthly``
+ - ``weekly``
+ - ``None``
 
 It outputs a `Pandas
 DataFrame <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html>`__

@@ -144,7 +144,7 @@ We can calculate degree days using:
  - ``'monthly'``
  - ``'weekly'``
  - ``None``
- - Any lambda function that can be use apply on a ``datetime``:
+ - Any lambda function that can be use and that can be applied to a ``datetime``:
 
 ::
 

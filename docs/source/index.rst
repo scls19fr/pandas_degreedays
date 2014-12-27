@@ -138,7 +138,7 @@ We can calculate degree days using:
 
 ``Tref`` is reference temperature - default value is ``18.0``
 
-``group``can be :
+``group`` can be :
  - ``'yearly'`` - this is default grouping option
  - ``'monthly'``
  - ``'weekly'``

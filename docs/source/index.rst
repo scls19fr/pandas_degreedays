@@ -143,6 +143,13 @@ We can calculate degree days using:
  - ``'monthly'``
  - ``'weekly'``
  - ``None``
+ - Any lambda function that can be use apply on a ``datetime``:
+
+::
+
+    from pandas_degreedays import yearly_month
+    df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group=lambda dt: yearly_month(dt, 10))
+
 
 It outputs a `Pandas
 DataFrame <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html>`__
@@ -173,7 +180,6 @@ You can display plot using:
 
     from pandas_degreedays import plot_temp
     plot_temp(ts_temp, df_degreedays)
-
 
 .. figure:: figure_yearly.png
    :alt: figure

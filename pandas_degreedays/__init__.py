@@ -24,6 +24,8 @@ import datetime
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import logging
+import traceback
 
 from .version import __author__, __copyright__, __credits__, \
     __license__, __version__, __maintainer__, __email__, __status__, __url__
@@ -315,16 +317,16 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'
             'weekly': weekly,
         }
 
-        try:
-            group_col = 'group_col'
+        if group is not None:
+            #group_col = 'group_col'
+            group_col = str(group)
             if callable(group):
                 df_degreedays[group_col] = df_degreedays.index.map(group)
             else:
                 f_group_col = d_groups[group]
                 df_degreedays[group_col] = df_degreedays.index.map(f_group_col)
             df_degreedays['DD_cum'] = df_degreedays.groupby(group_col)['DD'].cumsum()
-            
-        except:
+        else:
             df_degreedays['DD_cum'] = df_degreedays['DD'].cumsum()
 
         return(df_degreedays)

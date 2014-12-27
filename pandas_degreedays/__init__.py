@@ -300,16 +300,6 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'
         #print(type(df_degreedays.index[0]))
         df_degreedays = df_degreedays.resample('1D')
 
-        #df_degreedays['year'] = df_degreedays.index.map(lambda x: x.year)
-        #df_degreedays['year_month'] = df_degreedays.index.map(lambda x: (x.year, x.month)) # (year, month)
-        #df_degreedays['year_week'] = df_degreedays.index.map(lambda x: x.isocalendar()[0:2]) # (year, week_number)
-        
-        #d_groups = {
-        #    'yearly': 'year',
-        #    'monthly': 'year_month',
-        #    'weekly': 'year_week',
-        #}
-
         d_groups = {
             'yearly': yearly,
             'yearly10': lambda dt: yearly_month(dt, 10),
@@ -318,11 +308,11 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'
         }
 
         if group is not None:
-            #group_col = 'group_col'
-            group_col = str(group)
             if callable(group):
+                group_col = 'func'
                 df_degreedays[group_col] = df_degreedays.index.map(group)
             else:
+                group_col = str(group)
                 f_group_col = d_groups[group]
                 df_degreedays[group_col] = df_degreedays.index.map(f_group_col)
             df_degreedays['DD_cum'] = df_degreedays.groupby(group_col)['DD'].cumsum()

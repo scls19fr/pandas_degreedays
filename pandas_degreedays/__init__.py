@@ -201,12 +201,30 @@ def calc_dates_6hours(ts):
 
 def yearly_month(dt, month=10):
     """
-    Returns year given a datetime
+    Returns year given a datetime and a month as start
     """
     if dt.month>=month:
         return(dt.year)
     else:
         return(dt.year-1)
+
+def yearly(dt):
+    """
+    Returns year given a datetime
+    """
+    return(dt.year)
+
+def monthly(dt):
+    """
+    Returns (year, month)
+    """
+    return(dt.year, dt.month)
+
+def weekly(dt):
+    """
+    Returns (year, week_number)
+    """
+    return(dt.isocalendar()[0:2])
 
 def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'):
     """
@@ -279,18 +297,29 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'
         #print(type(df_degreedays.index[0]))
         df_degreedays = df_degreedays.resample('1D')
 
-        df_degreedays['year'] = df_degreedays.index.map(lambda x: x.year)
-        df_degreedays['year_month'] = df_degreedays.index.map(lambda x: (x.year, x.month)) # (year, month)
-        df_degreedays['year_week'] = df_degreedays.index.map(lambda x: x.isocalendar()[0:2]) # (year, week_number)
+        #df_degreedays['year'] = df_degreedays.index.map(lambda x: x.year)
+        #df_degreedays['year_month'] = df_degreedays.index.map(lambda x: (x.year, x.month)) # (year, month)
+        #df_degreedays['year_week'] = df_degreedays.index.map(lambda x: x.isocalendar()[0:2]) # (year, week_number)
         
+        #d_groups = {
+        #    'yearly': 'year',
+        #    'monthly': 'year_month',
+        #    'weekly': 'year_week',
+        #}
+
         d_groups = {
-            'yearly': 'year',
-            'monthly': 'year_month',
-            'weekly': 'year_week',
+            'yearly': yearly,
+            'monthly': monthly,
+            'weekly': weekly,
         }
+
         try:
-            group_col = d_groups[group]
+            f_group_col = d_groups[group]
+            group_col = 'group_col'
+            df_degreedays[group_col] = df_degreedays.index.map(f_group_col)
             df_degreedays['DD_cum'] = df_degreedays.groupby(group_col)['DD'].cumsum()
+            #df_degreedays['DD_cum'] = df_degreedays.groupby(group_col)['DD'].cumsum()
+            
         except:
             df_degreedays['DD_cum'] = df_degreedays['DD'].cumsum()
 

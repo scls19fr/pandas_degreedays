@@ -5,7 +5,8 @@ from setuptools import setup, find_packages  # Always prefer setuptools over dis
 from codecs import open  # To use a consistent encoding
 from os import path
 
-exec(open('pandas_degreedays/version.py').read())
+with open('pandas_degreedays/version.py') as f:
+    exec(f.read())
 
 #from version import __author__, __copyright__, __credits__, \
 #    __license__, __version__, __maintainer__, __email__, __status__, __url__

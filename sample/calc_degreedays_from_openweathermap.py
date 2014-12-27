@@ -69,6 +69,9 @@ def main(provider, api_key, lon, lat, range, column):
 
     # calculates and display degree days
     df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly')
+    #df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly10')
+    #df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group=lambda dt: yearly_month(dt, 8))
+
     print(df_degreedays)
 
     #df_degreedays['DD_7'] = pd.rolling_mean(df_degreedays['DD'], 7)

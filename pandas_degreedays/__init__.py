@@ -199,7 +199,8 @@ def calc_dates_6hours(ts):
     df_temp["D_MIN"] = df_temp.index.map(degreedays_date_Tn) # calculating date for Tmin
     return(df_temp)
 
-def yearly_month(dt, month=10):
+#def yearly_month(dt, month=10):
+def yearly_month(dt, month):
     """
     Returns year given a datetime and a month as start
     """
@@ -315,9 +316,12 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'
         }
 
         try:
-            f_group_col = d_groups[group]
             group_col = 'group_col'
-            df_degreedays[group_col] = df_degreedays.index.map(f_group_col)
+            if callable(group):
+                df_degreedays[group_col] = df_degreedays.index.map(group)
+            else:
+                f_group_col = d_groups[group]
+                df_degreedays[group_col] = df_degreedays.index.map(f_group_col)
             df_degreedays['DD_cum'] = df_degreedays.groupby(group_col)['DD'].cumsum()
             
         except:

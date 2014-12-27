@@ -5,7 +5,8 @@ from setuptools import setup, find_packages  # Always prefer setuptools over dis
 from codecs import open  # To use a consistent encoding
 from os import path
 
-with open('pandas_degreedays/version.py') as f:
+NAME = 'pandas_degreedays'
+with open("%s/version.py" % NAME) as f:
     exec(f.read())
 
 #from version import __author__, __copyright__, __credits__, \
@@ -20,7 +21,7 @@ def readme():
         return f.read()
 
 setup(
-    name='pandas_degreedays',
+    name=NAME,
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see

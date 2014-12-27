@@ -28,7 +28,7 @@ def main():
     #print(ts_temp.index)
 
     # calculates and display degree days
-    df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly')
+    df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly10')
     print(df_degreedays)
 
     #df_degreedays['DD_7'] = pd.rolling_mean(df_degreedays['DD'], 7)

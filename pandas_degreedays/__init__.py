@@ -309,6 +309,7 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'
 
         d_groups = {
             'yearly': yearly,
+            'yearly10': lambda dt: yearly_month(dt, 10),
             'monthly': monthly,
             'weekly': weekly,
         }
@@ -318,7 +319,6 @@ def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'
             group_col = 'group_col'
             df_degreedays[group_col] = df_degreedays.index.map(f_group_col)
             df_degreedays['DD_cum'] = df_degreedays.groupby(group_col)['DD'].cumsum()
-            #df_degreedays['DD_cum'] = df_degreedays.groupby(group_col)['DD'].cumsum()
             
         except:
             df_degreedays['DD_cum'] = df_degreedays['DD'].cumsum()

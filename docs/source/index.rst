@@ -131,14 +131,17 @@ We can calculate degree days using:
 ``method`` can be :
  - ``'pro'`` (energy professionals) - this is default calculation method
  - ``'meteo'``
+
 ``typ`` (calculation type) can be :
  - ``'heating'`` - this is default calculation type
  - ``'cooling'``
+
 ``Tref`` is reference temperature - default value is ``18.0``
+
 ``group``can be :
- - ``yearly`` - this is default grouping option
- - ``monthly``
- - ``weekly``
+ - ``'yearly'`` - this is default grouping option
+ - ``'monthly'``
+ - ``'weekly'``
  - ``None``
 
 It outputs a `Pandas

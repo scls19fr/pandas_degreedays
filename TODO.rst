@@ -46,3 +46,13 @@ Read Excel file
 
 see also data_quality.py
 
+
+
+
+def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'):
+    pass
+
+group parameter should also support lambda function (applied to date)
+see function yearly_month
+so we could count degree days yearly but from october the 1st
+(instead of january the 1st)

@@ -199,6 +199,15 @@ def calc_dates_6hours(ts):
     df_temp["D_MIN"] = df_temp.index.map(degreedays_date_Tn) # calculating date for Tmin
     return(df_temp)
 
+def yearly_month(dt, month=10):
+    """
+    Returns year given a datetime
+    """
+    if dt.month>=month:
+        return(dt.year)
+    else:
+        return(dt.year-1)
+
 def calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly'):
     """
     Calculating degree days from time series with temperature values: ts_temp

@@ -3,7 +3,13 @@
 
 import os
 import datetime
+
+import pandas_degreedays
 from pandas_degreedays import *
+
+def test_version():
+    """Test version"""
+    isinstance(pandas_degreedays.__version__, basestring)
 
 def test_degreedays_date_Tmin_before_6PM():
     """Tmin: BEFORE 6PM"""

@@ -140,6 +140,7 @@ We can calculate degree days using:
 
 ``group`` can be :
  - ``'yearly'`` - this is default grouping option
+ - ``'yearly10'`` - same as ``'yearly'`` but year starts in October (10)
  - ``'monthly'``
  - ``'weekly'``
  - ``None``

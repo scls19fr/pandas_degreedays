@@ -25,8 +25,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-#from pandas_degreedays.version import __author__, __copyright__, __credits__, \
-#    __license__, __version__, __maintainer__, __email__, __status__, __url__
+from pandas_degreedays.version import __author__, __copyright__, __credits__, \
+    __license__, __version__, __maintainer__, __email__, __status__, __url__
 
 # Meteo
 def hdd_meteo(Tn, Tx, Tref=18):

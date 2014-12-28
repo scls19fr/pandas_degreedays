@@ -185,6 +185,9 @@ You can display plot using:
 .. figure:: figure_yearly10.png
    :alt: figure
 
+.. figure:: figure_yearly10_comp.png
+   :alt: figure
+
 About Pandas
 ------------
 

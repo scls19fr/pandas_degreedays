@@ -201,6 +201,15 @@ def calc_dates_6hours(ts):
     df_temp["D_MIN"] = df_temp.index.map(degreedays_date_Tn) # calculating date for Tmin
     return(df_temp)
 
+def yearly_month_ref(dt, month, year=1970):
+    """
+    Returns reference year (1970 or 1971) given a datetime and a month as start
+    """
+    if dt.month>=month:
+        return(year)
+    else:
+        return(year+1)
+
 #def yearly_month(dt, month=10):
 def yearly_month(dt, month):
     """

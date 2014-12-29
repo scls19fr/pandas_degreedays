@@ -10,6 +10,7 @@ Plotting
 import click
 
 import os
+import datetime
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -24,11 +25,13 @@ from pandas_degreedays import yearly_month
 @click.option('--method', default='pro', help=u"Degree days method ('pro' or 'meteo')")
 @click.option('--typ', default='heating', help=u"Degree days type ('heating' or 'cooling')")
 @click.option('--tref', default=18.0, help=u"Reference temperature to calculate degree days")
-@click.option('--group', default='yearly', help=u"Grouping period ('yearly', 'yearly10', 'monthly')")
-def main(filename, col_dt, col_temp, method, typ, tref, group):
+@click.option('--groupname', default='yearly10', help=u"Grouping period ('yearly', 'yearly10', 'monthly')")
+def main(filename, col_dt, col_temp, method, typ, tref, groupname):
     basepath = os.path.dirname(__file__)
     filename = os.path.join(basepath, filename)
     #filename='sample/temperature_sample.xls'
+    #col_dt = 'datetime'
+    #col_temp = 'temp'
     df_temp = pd.read_excel(filename)
     df_temp = df_temp.set_index(col_dt)
     ts_temp = df_temp[col_temp] # get serie from DataFrame
@@ -42,11 +45,12 @@ def main(filename, col_dt, col_temp, method, typ, tref, group):
     #print(ts_temp.index)
 
     # calculates and display degree days
-    df_degreedays = calculate_dd(ts_temp, method=method, typ=typ, Tref=tref, group=group)
+    df_degreedays = calculate_dd(ts_temp, method=method, typ=typ, Tref=tref, group=groupname)
     #df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='monthly')
     #df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly')
-    month = 10
-    df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly10')
+    #month = 10
+    #groupname = yearly10
+    #df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group=groupname)
     #df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group=lambda dt: yearly_month(dt, month))
     #print(df_degreedays)
 
@@ -55,11 +59,14 @@ def main(filename, col_dt, col_temp, method, typ, tref, group):
     plot_temp(ts_temp, df_degreedays)
     plt.show()
 
-    #df_degreedays = df_degreedays.reset_index()
-    groupname = 'yearly10'
+    #import calendar
+    df_degreedays = df_degreedays.reset_index()
+    df_degreedays['duration'] = df_degreedays['date'].map(lambda dt: datetime.datetime(1970, dt.month, dt.day))
     #df_degreedays['duration'] = (df_degreedays['date'] - df_degreedays[groupname].map(lambda year: datetime.datetime(year, month, 1))).map(lambda td: td.astype('timedelta64[D]')/np.timedelta64(1, 'D'))
     df_degreedays_yearly = pd.pivot_table(df_degreedays, values='DD_cum', index='duration', columns=groupname)
-
+    #lst = [calendar.month_abbr[(month - 1 + i) % 12 + 1] for i in range(12)]
+    df_degreedays_yearly.plot()
+    plt.show()
 
 if __name__ == "__main__":
     main()

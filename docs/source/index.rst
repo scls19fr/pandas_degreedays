@@ -196,6 +196,28 @@ fast, flexible, and expressive data structures designed to make working
 with "relational" or "labeled" data both easy and intuitive. It's a very
 convenient library to work with time series.
 
+
+Install
+-------
+
+From Python package index
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+    $ pip install pandas_degreedays
+
+From source
+~~~~~~~~~~~
+
+Get latest version using Git
+
+::
+
+    $ git clone https://github.com/scls19fr/pandas_degreedays.git
+    $ cd pandas_degreedays
+    $ python setup.py install
+
 Links
 -----
 

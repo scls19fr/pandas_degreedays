@@ -182,10 +182,10 @@ You can display plot using:
     from pandas_degreedays import plot_temp
     plot_temp(ts_temp, df_degreedays)
 
-.. figure:: figure_yearly10.png
+.. figure:: img/figure_yearly10.png
    :alt: figure
 
-.. figure:: figure_yearly10_comp.png
+.. figure:: img/figure_yearly10_comp.png
    :alt: figure
 
 About Pandas

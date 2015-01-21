@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 __author__ = "Sebastien Celles"
 __copyright__ = "Copyright 2014, celles.net"
 __credits__ = ["Sebastien Celles"]

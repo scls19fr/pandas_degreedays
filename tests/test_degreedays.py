@@ -6,10 +6,12 @@ import datetime
 
 import pandas_degreedays
 from pandas_degreedays import *
+import six
 
 def test_version():
     """Test version"""
-    isinstance(pandas_degreedays.__version__, basestring)
+    version = pandas_degreedays.__version__
+    isinstance(version, six.string_types)
 
 def test_degreedays_date_Tmin_before_6PM():
     """Tmin: BEFORE 6PM"""

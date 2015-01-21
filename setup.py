@@ -4,20 +4,22 @@
 from setuptools import setup, find_packages  # Always prefer setuptools over distutils
 from codecs import open  # To use a consistent encoding
 from os import path
+import io
+
+here = path.abspath(path.dirname(__file__))
 
 NAME = 'pandas_degreedays'
-with open("%s/version.py" % NAME) as f:
+with io.open(path.join(here, NAME, 'version.py'), 'rt', encoding='UTF-8') as f:
     exec(f.read())
 
 #from version import __author__, __copyright__, __credits__, \
 #    __license__, __version__, __maintainer__, __email__, __status__, __url__
 
-here = path.abspath(path.dirname(__file__))
-
+# Get the long description from the relevant file
 def readme():
     #filename = path.join(here, 'docs', 'source', 'index.rst')
     filename = path.join(here, 'README.rst')
-    with open(filename) as f:
+    with io.open(filename, 'rt', encoding='UTF-8') as f:
         return f.read()
 
 setup(

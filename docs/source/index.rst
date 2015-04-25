@@ -36,6 +36,10 @@ Welcome to pandas_degreedays's documentation!
 .. image:: https://badges.gitter.im/Join%20Chat.svg
    :target: https://gitter.im/scls19fr/pandas_degreedays?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
+.. image:: https://landscape.io/github/scls19fr/pandas_degreedays/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/scls19fr/pandas_degreedays/master
+   :alt: Code Health
+
 .. image:: https://travis-ci.org/scls19fr/pandas_degreedays.svg?branch=master
     :target: https://travis-ci.org/scls19fr/pandas_degreedays
 

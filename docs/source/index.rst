@@ -1,8 +1,3 @@
-.. pandas_degreedays documentation master file, created by
-   sphinx-quickstart on Sun Dec 21 18:06:29 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to pandas_degreedays's documentation!
 =============================================
 
@@ -38,12 +33,6 @@ Welcome to pandas_degreedays's documentation!
 
 .. image:: https://travis-ci.org/scls19fr/pandas_degreedays.svg?branch=master
     :target: https://travis-ci.org/scls19fr/pandas_degreedays
-
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
 
 pandas\_degreedays
 ==================
@@ -224,11 +213,3 @@ Links
 - Documentation can be found at `Read The Docs <http://pandas-degreedays.readthedocs.org/>`__ ;
 - Source code and issue tracking can be found at `GitHub <https://github.com/scls19fr/pandas_degreedays>`__.
 - Feel free to `tip me <https://gratipay.com/scls19fr/>`__!
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-

@@ -12,16 +12,6 @@ NAME = 'pandas_degreedays'
 with io.open(path.join(here, NAME, 'version.py'), 'rt', encoding='UTF-8') as f:
     exec(f.read())
 
-#from version import __author__, __copyright__, __credits__, \
-#    __license__, __version__, __maintainer__, __email__, __status__, __url__
-
-# Get the long description from the relevant file
-def readme():
-    #filename = path.join(here, 'docs', 'source', 'index.rst')
-    filename = path.join(here, 'README.rst')
-    with io.open(filename, 'rt', encoding='UTF-8') as f:
-        return f.read()
-
 setup(
     name=NAME,
 
@@ -32,7 +22,7 @@ setup(
     version=__version__,
 
     description='Pandas degree days',
-    long_description=readme(),
+    long_description_markdown_filename='README.md',
 
     # The project's main homepage.
     url=__url__,

@@ -1,25 +1,18 @@
 Welcome to pandas\_degreedays's documentation!
 ==============================================
 
-[![Latest Version](https://pypip.in/version/pandas_degreedays/badge.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
-
-[![Supported Python versions](https://pypip.in/py_versions/pandas_degreedays/badge.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
-
-[![Download format](https://pypip.in/format/pandas_degreedays/badge.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
-
-[![License](https://pypip.in/license/pandas_degreedays/badge.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
-
-[![Development Status](https://pypip.in/status/pandas_degreedays/badge.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
-
-[![Documentation Status](https://readthedocs.org/projects/pandas-degreedays/badge/?version=latest)](http://pandas-degreedays.readthedocs.org/en/latest/)
-
-[![image](https://sourcegraph.com/api/repos/github.com/scls19fr/pandas_degreedays/.badges/status.png)](https://sourcegraph.com/github.com/scls19fr/pandas_degreedays)
-
-[![image](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/scls19fr/pandas_degreedays?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
+[![Latest Version](https://img.shields.io/pypi/v/pandas_degreedays.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/pandas_degreedays.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
+[![Wheel format](https://img.shields.io/pypi/wheel/pandas_degreedays.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
+[![License](https://img.shields.io/pypi/l/pandas_degreedays.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
+[![Development Status](https://img.shields.io/pypi/status/pandas_degreedays.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
+[![Downloads monthly](https://img.shields.io/pypi/dm/pandas_degreedays.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
+[![Documentation Status](https://readthedocs.org/projects/pandas_degreedays/badge/?version=latest)](http://pandas_degreedays.readthedocs.org/en/latest/)
+[![Sourcegraph](https://sourcegraph.com/api/repos/github.com/scls19fr/pandas_degreedays/.badges/status.png)](https://sourcegraph.com/github.com/scls19fr/pandas_degreedays)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/scls19fr/pandas_degreedays?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Code Health](https://landscape.io/github/scls19fr/pandas_degreedays/master/landscape.svg?style=flat)](https://landscape.io/github/scls19fr/pandas_degreedays/master)
+[![Build Status](https://travis-ci.org/scls19fr/pandas_degreedays.svg)](https://travis-ci.org/scls19fr/pandas_degreedays)
 
-[![image](https://travis-ci.org/scls19fr/pandas_degreedays.svg?branch=master)](https://travis-ci.org/scls19fr/pandas_degreedays)
 
 pandas\_degreedays
 ==================

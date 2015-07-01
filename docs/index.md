@@ -95,12 +95,13 @@ We can calculate degree days using:
 -   `None`
 -   Any lambda function that can be use and that can be applied to a `datetime`:
 
-<!-- -->
+
 
     from pandas_degreedays import yearly_month
     df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group=lambda dt: yearly_month(dt, 10))
 
 It outputs a [Pandas DataFrame](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html) with degree days like:
+
 
     Tmin  Tmax   Tavg  Tref         DD      DD_cum
     2014-03-22 7.0 11.0 9.00 18 9.000000 9.000000

@@ -125,9 +125,9 @@ You can display plot using:
     from pandas_degreedays import plot_temp
     plot_temp(ts_temp, df_degreedays)
 
-![](img/figure_yearly10.png)
+![](docs/img/figure_yearly10.png)
 
-![](img/figure_yearly10_comp.png)
+![](docs/img/figure_yearly10_comp.png)
 
 About Pandas
 ------------

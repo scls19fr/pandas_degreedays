@@ -77,7 +77,7 @@ We can calculate degree days using:
     from pandas_degreedays import calculate_dd
     df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group='yearly')
 
-`method` can be :  
+`method` can be:  
 -   `'pro'` (energy professionals) - this is default calculation method
 -   `'meteo'`
 
@@ -87,7 +87,7 @@ We can calculate degree days using:
 
 `Tref` is reference temperature - default value is `18.0`
 
-`group` can be :  
+`group` can be:  
 -   `'yearly'` - this is default grouping option
 -   `'yearly10'` - same as `'yearly'` but year starts in October (10)
 -   `'monthly'`
@@ -95,7 +95,7 @@ We can calculate degree days using:
 -   `None`
 -   Any lambda function that can be use and that can be applied to a `datetime`:
 
-
+Example:
 
     from pandas_degreedays import yearly_month
     df_degreedays = calculate_dd(ts_temp, method='pro', typ='heating', Tref=18.0, group=lambda dt: yearly_month(dt, 10))

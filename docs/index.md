@@ -7,6 +7,7 @@ Welcome to pandas\_degreedays's documentation!
 [![License](https://img.shields.io/pypi/l/pandas_degreedays.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
 [![Development Status](https://img.shields.io/pypi/status/pandas_degreedays.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
 [![Downloads monthly](https://img.shields.io/pypi/dm/pandas_degreedays.svg)](https://pypi.python.org/pypi/pandas_degreedays/)
+[![Requirements Status](https://requires.io/github/scls19fr/pandas_degreedays/requirements.svg?branch=master)](https://requires.io/github/scls19fr/pandas_degreedays/requirements/?branch=master)
 [![Documentation Status](https://readthedocs.org/projects/pandas_degreedays/badge/?version=latest)](http://pandas_degreedays.readthedocs.org/en/latest/)
 [![Sourcegraph](https://sourcegraph.com/api/repos/github.com/scls19fr/pandas_degreedays/.badges/status.png)](https://sourcegraph.com/github.com/scls19fr/pandas_degreedays)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/scls19fr/pandas_degreedays?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)

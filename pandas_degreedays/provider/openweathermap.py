@@ -26,3 +26,14 @@ class TemperatureProviderOpenWeatherMap(TemperatureProviderBase):
         ts_temp = data[column] # get serie from DataFrame
 
         return(ts_temp)
+
+    def get_from_place(self, place, start_date, end_date, column='main.temp.ma'):
+        cache_name = 'cache-openweathermap'
+        ow = OpenWeatherMapRequests(api_key=self.api_key, cache_name=cache_name, expire_after=None) # no expiration for history
+
+        data = ow.get_historic_weather(place, start_date, end_date)
+        logging.info("\n%s" % data)
+
+        ts_temp = data[column] # get serie from DataFrame
+
+        return(ts_temp)
